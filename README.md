@@ -43,7 +43,7 @@ exports['nlp-lib']:HideTextUI()
 exports['nlp-lib']:Progressbar('Repairing Engine...', 10000)
 ```
 
-For advanced usage, customization, and server-side events, please read our [Developer Documentation](DOCS.md).
+For advanced usage, customization, and server-side events, please read our [Developer Documentation](https://github.com/nlp-studio876/nlp-lib/blob/main/nlp-lib/DOCS.md).
 
 ## 📜 License
 This project is open-source and available under the MIT License.
