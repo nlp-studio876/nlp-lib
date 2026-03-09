@@ -17,7 +17,6 @@ It replaces standard ugly notifications and helps developers easily implement be
 1. Download or clone this repository.
 2. Place the `nlp-lib` folder inside your server's `resources` directory.
 3. Add `ensure nlp-lib` to your `server.cfg`.
-
 ## 🚀 Quick Usage
 ```lua
 -- Notify
