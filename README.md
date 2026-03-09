@@ -8,23 +8,15 @@
 It replaces standard ugly notifications and helps developers easily implement beautiful UI elements like Notifications, TextUI, and Progress Bars with zero dependencies (no jQuery, no Tailwind).
 
 ## ✨ Features
-- **🔔 Notifications:** Sleek glassmorphism design, multiple states (success, error, info, warning), and a soft built-in sound effect.
+- **🔔 Notifications:** Sleek design, multiple states (success, error, info, warning), and a soft built-in sound effect.
 - **⌨️ Smart TextUI:** Positioned perfectly above the minimap. Automatically parses text inside brackets (e.g., `[E]`) and renders a stylish glowing keyboard key.
 - **⏳ Progress Bar:** Centered at the bottom with a smooth filling animation and neon glow effect.
 - **⚡ Highly Optimized:** 0.00ms resmon. Runs entirely on the client side and only draws when active.
-- **🎨 Premium UI/UX:** Uses `backdrop-filter` for a blurred effect, subtle shadows, and the beautiful Montserrat font.
-
-## 📸 Previews
-*(Here you can add images/GIFs of your UI)*
-- `[Placeholder for Notify Image]`
-- `[Placeholder for TextUI Image]`
-- `[Placeholder for Progressbar Image]`
-
+- 
 ## 📥 Installation
 1. Download or clone this repository.
 2. Place the `nlp-lib` folder inside your server's `resources` directory.
-3. Make sure you have your notification sound placed in `nlp-lib/html/sound/notification.mp3`.
-4. Add `ensure nlp-lib` to your `server.cfg`.
+3. Add `ensure nlp-lib` to your `server.cfg`.
 
 ## 🚀 Quick Usage
 ```lua
