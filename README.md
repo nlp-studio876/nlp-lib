@@ -1,4 +1,4 @@
-<img width="458" height="374" alt="изображение" src="https://github.com/user-attachments/assets/67a1c913-0688-424f-98c1-f11e4da09356" /># 🌟 nlp-lib | Modern FiveM UI Library
+<img width="398" height="300" alt="изображение" src="https://github.com/user-attachments/assets/84ba2f6b-72a1-4abc-8f50-f23e2d7460c0" /><img width="458" height="374" alt="изображение" src="https://github.com/user-attachments/assets/67a1c913-0688-424f-98c1-f11e4da09356" /># 🌟 nlp-lib | Modern FiveM UI Library
 
 ![FiveM](https://img.shields.io/badge/FiveM-Ready-orange.svg)
 ![Standalone](https://img.shields.io/badge/Framework-Standalone-blue.svg)
@@ -10,13 +10,16 @@ It replaces standard ugly notifications and helps developers easily implement be
 ## 📸 Previews
 
 **Notifications:**
-![Notify Preview]([https://твой-сайт.com/ссылка-на-картинку-notify.png](https://media.discordapp.net/attachments/1480632593669034167/1480632777849438422/image.png?ex=69b0623b&is=69af10bb&hm=c8bb6ee934c47393893a1943c4a24c1722cd79e74a4efd00cec541ef62cf810f&=&format=webp&quality=lossless&width=498&height=375))
+<br>
+<img src="https://media.discordapp.net/attachments/1480632593669034167/1480632777849438422/image.png?ex=69b0623b&is=69af10bb&hm=c8bb6ee934c47393893a1943c4a24c1722cd79e74a4efd00cec541ef62cf810f&=&format=webp&quality=lossless&width=498&height=375" width="600">
 
 **Text UI:**
-![Text UI Preview]([https://твой-сайт.com/ссылка-на-картинку-textui.png](https://media.discordapp.net/attachments/1480632593669034167/1480632778595897374/image.png?ex=69b0623b&is=69af10bb&hm=68d72b50e1cfc65bafd4bafb038e9905ea6a255e37329ee31164ddd318922b29&=&format=webp&quality=lossless&width=573&height=468))
+<br>
+<img src="https://media.discordapp.net/attachments/1480632593669034167/1480632778595897374/image.png?ex=69b0623b&is=69af10bb&hm=68d72b50e1cfc65bafd4bafb038e9905ea6a255e37329ee31164ddd318922b29&=&format=webp&quality=lossless&width=573&height=468" width="600">
 
 **Progress Bar:**
-![Progressbar Preview]([https://твой-сайт.com/ссылка-на-картинку-progressbar.gif](https://media.discordapp.net/attachments/1480632593669034167/1480632778214084749/image.png?ex=69b0623b&is=69af10bb&hm=72124439875a9d0ce5f0b55db317cbf696f784aab960f1b0a67aa4f3103b888d&=&format=webp&quality=lossless&width=566&height=165))
+<br>
+<img src="https://media.discordapp.net/attachments/1480632593669034167/1480632778214084749/image.png?ex=69b0623b&is=69af10bb&hm=72124439875a9d0ce5f0b55db317cbf696f784aab960f1b0a67aa4f3103b888d&=&format=webp&quality=lossless&width=566&height=165" width="600">
 
 ## ✨ Features
 - **🔔 Notifications:** Sleek design, multiple states (success, error, info, warning), and a soft built-in sound effect.
