@@ -11,11 +11,11 @@ It replaces standard ugly notifications and helps developers easily implement be
 
 **Notifications:**
 <br>
-<img src="https://media.discordapp.net/attachments/1480632593669034167/1480632777849438422/image.png?ex=69b0623b&is=69af10bb&hm=c8bb6ee934c47393893a1943c4a24c1722cd79e74a4efd00cec541ef62cf810f&=&format=webp&quality=lossless&width=498&height=375" width="600">
+<img src="https://media.discordapp.net/attachments/1480632593669034167/1480632777849438422/image.png?ex=69b0623b&is=69af10bb&hm=c8bb6ee934c47393893a1943c4a24c1722cd79e74a4efd00cec541ef62cf810f&=&format=webp&quality=lossless&width=498&height=375" width="300">
 
 **Text UI:**
 <br>
-<img src="https://media.discordapp.net/attachments/1480632593669034167/1480632778595897374/image.png?ex=69b0623b&is=69af10bb&hm=68d72b50e1cfc65bafd4bafb038e9905ea6a255e37329ee31164ddd318922b29&=&format=webp&quality=lossless&width=573&height=468" width="600">
+<img src="https://media.discordapp.net/attachments/1480632593669034167/1480632778595897374/image.png?ex=69b0623b&is=69af10bb&hm=68d72b50e1cfc65bafd4bafb038e9905ea6a255e37329ee31164ddd318922b29&=&format=webp&quality=lossless&width=573&height=468" width="300">
 
 **Progress Bar:**
 <br>
