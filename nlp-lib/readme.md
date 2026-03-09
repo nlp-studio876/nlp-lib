@@ -1,57 +1,148 @@
-# 🌟 gw-lib | Minimalist FiveM UI
+# 🛠️ nlp-lib | Developer Documentation
 
-A modern, fast, and ultra-lightweight UI library for FiveM servers. Completely standalone (works on ESX, QBCore, vRP, or Custom Frameworks) using pure JS/CSS/HTML with zero dependencies (no jQuery, Tailwind, etc.).
+This document provides detailed technical information on how to use, integrate, and customize `nlp-lib` within your FiveM server scripts.
 
-## 🔥 Features
-- **Notifications (Notify):** Sleek design, multiple states (success, error, info, warning), and a soft built-in sound effect.
-- **Text UI:** Positioned perfectly above the minimap. Automatically parses text inside brackets (e.g., `[E]`) and renders a stylish glowing keyboard key.
-- **Progress Bar:** Centered at the bottom with a smooth filling animation and neon glow effect.
-- **Highly Optimized:** 0.00ms resmon, entirely client-side, loads instantly.
-- **Modern UI/UX:** Uses `backdrop-filter` for a glassmorphism effect, subtle shadows, and the premium Montserrat font.
+---
 
-## 📥 Installation
-1. Download or clone this repository.
-2. Place the `gw-lib` folder inside your server's `resources` directory.
-3. Make sure you have your notification sound placed in `gw-lib/html/sound/notification.mp3`.
-4. Add `ensure gw-lib` to your `server.cfg`.
+## 📦 1. Client-Side Exports
 
-## 🛠️ Export Usage
+### `Notify`
+Triggers a notification popup on the player's screen.
 
-### 1. Notifications
-Trigger a beautiful notification popup.
-**Client-side:**
+**Syntax:**
 ```lua
--- exports['gw-lib']:Notify(text, type, duration)
-exports['gw-lib']:Notify('Vehicle purchased successfully!', 'success', 5000)
-exports['gw-lib']:Notify('Not enough money.', 'error', 3000)
+exports['nlp-lib']:Notify(text, type, duration)
 ```
-**Server-side:**
+- `text` *(string)*: The message you want to display.
+- `type` *(string)*: The style of the notification. Allowed values: `'success'`, `'error'`, `'info'`, `'warning'`. Default is `'info'`.
+- `duration` *(number)*: Time in milliseconds the notification stays on screen. Default is `3000`.
+
+**Example:**
 ```lua
-TriggerClientEvent('gw-lib:notify', source, 'Welcome to the server!', 'info', 7000)
+-- Show a red error notification for 4 seconds
+exports['nlp-lib']:Notify('You do not have enough items!', 'error', 4000)
 ```
 
-### 2. Text UI
-Show interaction prompts on the screen. Any text placed in `[ ]` will be rendered as a key button.
-```lua
--- Show TextUI
-exports['gw-lib']:ShowTextUI('Press [E] to open the door', 'info')
-exports['gw-lib']:ShowTextUI('Hold [ALT] to interact', 'warning')
+### `ShowTextUI`
+Displays a persistent UI prompt (usually used in markers or interaction zones).
+**Important:** Any text wrapped in square brackets `[ ]` will automatically be converted into a stylish keyboard key button using Regex.
 
--- Hide TextUI
-exports['gw-lib']:HideTextUI()
+**Syntax:**
+```lua
+exports['nlp-lib']:ShowTextUI(text, type)
+```
+- `text` *(string)*: The prompt text. Example: `"Press [ALT] to engine on"`.
+- `type` *(string)*: The color scheme of the icon. Allowed values: `'success'`, `'error'`, `'info'`, `'warning'`.
+
+**Example:**
+```lua
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(0)
+        local dist = #(GetEntityCoords(PlayerPedId()) - vector3(100.0, 100.0, 20.0))
+        
+        if dist < 2.0 then
+            -- Show UI
+            exports['nlp-lib']:ShowTextUI('Press [E] to access the shop', 'info')
+            if IsControlJustPressed(0, 38) then
+                print("Shop opened!")
+            end
+        else
+            -- Hide UI when player leaves the zone
+            exports['nlp-lib']:HideTextUI()
+        end
+    end
+end)
 ```
 
-### 3. Progress Bar
-Show a smooth progress bar at the bottom center of the screen.
+### `HideTextUI`
+Hides the currently active TextUI prompt.
+
+**Syntax:**
 ```lua
--- exports['gw-lib']:Progressbar(text, duration_in_ms)
-exports['gw-lib']:Progressbar('Repairing Engine...', 10000)
+exports['nlp-lib']:HideTextUI()
 ```
 
-## 🎨 Customization
-- **Sound:** Replace `html/sound/notification.mp3` with any `.mp3` file of your choice.
-- **Volume:** Open `html/script.js` and change `audio.volume = 0.3;` to your preferred level.
-- **Design:** All styles, colors, and positions can be modified via `html/style.css`.
+### `Progressbar`
+Shows a smooth filling bar at the bottom center of the screen.
 
-## 📜 License
-This project is open-source and available under the MIT License. Feel free to use and modify it for your servers!
+**Syntax:**
+```lua
+exports['nlp-lib']:Progressbar(text, duration)
+```
+- `text` *(string)*: Title above the progress bar (e.g., `"Lockpicking..."`).
+- `duration` *(number)*: How long it takes for the bar to fill from 0% to 100% in milliseconds.
+
+**Example:**
+```lua
+exports['nlp-lib']:Progressbar('Healing...', 5000)
+Wait(5000) -- Wait for the progress bar to finish
+print("Healed!")
+```
+
+---
+
+## 🌐 2. Server-Side Events
+
+If you want to send a notification directly from a server script (e.g., after a database check), you can trigger the pre-configured NetEvent.
+
+**Syntax:**
+```lua
+TriggerClientEvent('nlp-lib:notify', target_source, text, type, duration)
+```
+
+**Example:**
+```lua
+RegisterNetEvent('buyVehicle')
+AddEventHandler('buyVehicle', function(price)
+    local _source = source
+    local hasMoney = true -- Your economy check here
+    
+    if hasMoney then
+        TriggerClientEvent('nlp-lib:notify', _source, 'Vehicle purchased successfully!', 'success', 5000)
+    else
+        TriggerClientEvent('nlp-lib:notify', _source, 'Insufficient funds!', 'error', 3000)
+    end
+end)
+```
+
+---
+
+## 🎨 3. Customization Guide
+
+### Changing Notification Sounds
+The library plays a sound every time `Notify()` is called. 
+1. Replace `html/sound/notification.mp3` with your own `.mp3` file.
+2. To adjust the **volume**, open `html/script.js`, locate `function createNotification`, and change:
+   ```javascript
+   audio.volume = 0.3; // Value between 0.0 (mute) and 1.0 (max)
+   ```
+
+### Adding New Icon Types
+By default, the script supports `success`, `error`, `info`, and `warning`.
+To add a new type (e.g., `admin`):
+1. **In `html/script.js`**, add your SVG to the `icons` object:
+   ```javascript
+   const icons = {
+       // ... existing icons
+       admin: `<svg> ... </svg>`
+   };
+   ```
+2. **In `html/style.css`**, add the color mapping:
+   ```css
+   .notification.admin .icon svg, .textui-box.admin .icon svg { 
+       stroke: #a855f7; /* Purple color */
+       color: #a855f7; 
+   }
+   ```
+3. Call it in your lua script: `exports['nlp-lib']:Notify('Admin Mode ON', 'admin', 3000)`
+
+### Adjusting TextUI Button Style (Regex Keys)
+The script wraps bracketed text (like `[E]`) in a `<span class="key-bind">` tag. 
+To change how the button looks (e.g., make it dark instead of white), edit `.key-bind` in `html/style.css`:
+```css
+.key-bind {
+    background: #18181b; /* Dark background */
+    color: #ffffff; /* White text */
+    /* ... */
+}
