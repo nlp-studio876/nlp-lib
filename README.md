@@ -1,4 +1,4 @@
-<img width="398" height="300" alt="изображение" src="https://github.com/user-attachments/assets/84ba2f6b-72a1-4abc-8f50-f23e2d7460c0" /><img width="458" height="374" alt="изображение" src="https://github.com/user-attachments/assets/67a1c913-0688-424f-98c1-f11e4da09356" /># 🌟 nlp-lib | Modern FiveM UI Library
+# 🌟 nlp-lib | Modern FiveM UI Library
 
 ![FiveM](https://img.shields.io/badge/FiveM-Ready-orange.svg)
 ![Standalone](https://img.shields.io/badge/Framework-Standalone-blue.svg)
