@@ -12,7 +12,6 @@ It replaces standard ugly notifications and helps developers easily implement be
 - **⌨️ Smart TextUI:** Positioned perfectly above the minimap. Automatically parses text inside brackets (e.g., `[E]`) and renders a stylish glowing keyboard key.
 - **⏳ Progress Bar:** Centered at the bottom with a smooth filling animation and neon glow effect.
 - **⚡ Highly Optimized:** 0.00ms resmon. Runs entirely on the client side and only draws when active.
-- 
 ## 📥 Installation
 1. Download or clone this repository.
 2. Place the `nlp-lib` folder inside your server's `resources` directory.
